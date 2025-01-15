@@ -93,8 +93,8 @@ For any inquiries or collaboration opportunities, feel free to reach out:
 
 - **Name**: Timur Mamadaliyev  
 - **Email**: [mamadaliyevtv@gmail.com]  
-- **LinkedIn**: [https://www.linkedin.com/in/timurmamadaliyev/]  
-- **Portfolio**: [Portfolio](https://github.com/TimurMMD/TM_portfolio)]
+- **LinkedIn**: [LinkedIn](https://www.linkedin.com/in/timurmamadaliyev/)  
+- **Portfolio**: [Portfolio](https://github.com/TimurMMD/TM_portfolio)
 
 ---
 
