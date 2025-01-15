@@ -2,3 +2,4 @@
 ## List of the projects and short description:
 - Transaction (Classification problem of identifying the suspicious activity during the money transaction)
 - Hackathon (Classification problem from Hackathon of identifying company's promotion candidate)
+- Regression_car_prices (Regression problem for Kaggle Hackathon of identifying the car prices)
