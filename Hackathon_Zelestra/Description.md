@@ -1,10 +1,10 @@
-🌞 Zelestra Hackathon - Predictive Maintenance for Solar Panels
+# 🌞 Zelestra Hackathon - Predictive Maintenance for Solar Panels
 This project was developed as part of the Zelestra Hackathon, where the primary goal was to develop a machine learning model that predicts performance degradation and potential failures in solar panels using historical and real-time sensor data. The aim is to enable predictive maintenance for solar infrastructure, reducing downtime and optimizing energy output.
 
-🔍 Problem Statement
+# 🔍 Problem Statement
 As solar energy systems are integrated into more infrastructures globally, ensuring their uptime and efficiency is crucial. Traditional maintenance approaches are reactive and inefficient. This hackathon tasked participants with designing a predictive model that enables proactive, data-driven maintenance.
 
-🧠 ML Approach and Strategy
+# 🧠 ML Approach and Strategy
 The full pipeline consists of several key stages:
 
 1. 📊 Data Loading and Exploration
@@ -77,3 +77,8 @@ The best model achieved a final score of 89.86
 Ranked in the Top 100 out of 8000 submissions
 
 The ensemble of LightGBM and CatBoost models contributed most to the final solution
+
+🚀 Conclusion
+This project demonstrated how combining powerful models like LightGBM and CatBoost with thorough preprocessing and hyperparameter tuning using Optuna can deliver high-accuracy predictive systems. With a rank in the top 1.25% of all teams, this solution serves as a strong baseline for solar panel maintenance prediction systems.
+
+
