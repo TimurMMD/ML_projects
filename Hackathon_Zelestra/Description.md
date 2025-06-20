@@ -1,84 +1,101 @@
 # 🌞 Zelestra Hackathon - Predictive Maintenance for Solar Panels
-This project was developed as part of the Zelestra Hackathon, where the primary goal was to develop a machine learning model that predicts performance degradation and potential failures in solar panels using historical and real-time sensor data. The aim is to enable predictive maintenance for solar infrastructure, reducing downtime and optimizing energy output.
 
-# 🔍 Problem Statement
-As solar energy systems are integrated into more infrastructures globally, ensuring their uptime and efficiency is crucial. Traditional maintenance approaches are reactive and inefficient. This hackathon tasked participants with designing a predictive model that enables proactive, data-driven maintenance.
+This project was developed as part of the **Zelestra Hackathon**, where the primary goal was to build a machine learning model that predicts **performance degradation and potential failures** in solar panels using historical and real-time sensor data. The aim: enable predictive maintenance for solar infrastructure, reduce downtime, and optimize energy output.
 
-# 🧠 ML Approach and Strategy
-The full pipeline consists of several key stages:
+---
 
-1. 📊 Data Loading and Exploration
-Loaded train.csv and test.csv from Google Drive.
+## 🔍 Problem Statement
 
-Examined structure with .info(), .describe(), and .head().
+As solar energy becomes a cornerstone of sustainable infrastructure, **ensuring operational efficiency and reliability** is more critical than ever. Traditional maintenance is reactive, leading to unnecessary costs and failures. This hackathon challenged participants to build a **proactive, intelligent system** for predictive maintenance of solar systems.
 
-Detected column types and distribution anomalies.
+---
 
-2. 🧼 Preprocessing
-Dropped unnecessary or constant columns.
+## 🧠 Machine Learning Strategy
 
-Filled missing values.
+Our pipeline consists of several key stages:
 
-Removed boolean columns where necessary.
+---
 
-Engineered features based on domain knowledge.
+### 📊 1. Data Loading & Exploration
 
-Applied standardization using StandardScaler.
+- Loaded `train.csv` and `test.csv` from Google Drive.
+- Inspected data using `.info()`, `.describe()`, `.head()`.
+- Identified feature types and anomalies for further cleaning.
 
-3. 🔧 Model Development
-Several models were implemented and fine-tuned using Optuna, a state-of-the-art hyperparameter optimization library:
+---
 
-✅ XGBoost
-Tuned parameters: n_estimators, max_depth, learning_rate, subsample, colsample_bytree, reg_alpha, reg_lambda
+### 🧼 2. Preprocessing
 
-Used custom_score as the evaluation metric.
+- Dropped constant or redundant features.
+- Removed columns with boolean types.
+- Imputed missing values.
+- Standardized numerical features using `StandardScaler`.
+- Engineered features with domain knowledge to enhance signal.
 
-🐱 CatBoost
-Parameters: iterations, depth, learning_rate, l2_leaf_reg, bagging_temperature, random_strength, border_count
+---
 
-K-Fold cross-validation used for robust scoring.
+### 🔧 3. Model Development & Optimization
 
-Standardization was included after initial trials.
+We implemented several models, each tuned using **Optuna**, a powerful hyperparameter optimization framework.
 
-🌲 RandomForest
-Trained as a baseline ensemble model.
+#### ✅ XGBoost
+- Parameters tuned:  
+  `n_estimators`, `max_depth`, `learning_rate`, `subsample`, `colsample_bytree`, `reg_alpha`, `reg_lambda`
+- Evaluation metric: `custom_score`
 
-💡 LightGBM
-Used early_stopping to avoid overfitting.
+#### 🐱 CatBoost
+- Parameters:  
+  `iterations`, `depth`, `learning_rate`, `l2_leaf_reg`, `bagging_temperature`, `random_strength`, `border_count`
+- Employed **K-Fold Cross-Validation**
+- Scaled data after early experimentation
 
-Tuned using:
+#### 🌲 RandomForest
+- Used as a simple yet powerful ensemble baseline
 
-learning_rate, num_leaves, max_depth, min_data_in_leaf
+#### 💡 LightGBM
+- Implemented with `early_stopping` to prevent overfitting
+- Tuned:
+  - `learning_rate`, `num_leaves`, `max_depth`, `min_data_in_leaf`
+  - `feature_fraction`, `bagging_fraction`, `bagging_freq`
+  - `lambda_l1`, `lambda_l2`
+- Final model retrained to extract **feature importance**
 
-feature_fraction, bagging_fraction, bagging_freq
+#### 🔥 TabNet
+- Used for deep tabular learning with built-in attention
+- Trained with **Optuna-tuned parameters**
 
-lambda_l1, lambda_l2
+---
 
-Retrained best parameters for feature importance.
+### 📈 Evaluation Strategy
 
-🔥 TabNet
-Deep tabular learning model using attention.
+- Custom metric based on **Root Mean Squared Error (RMSE)** and output scaling
+- Employed **3-fold cross-validation** to assess generalization
 
-Trained with Optuna-optimized parameters.
+---
 
-📈 Evaluation
-A custom metric based on RMSE and scaled output was used to evaluate all models. The models were trained using K-Fold cross-validation to ensure robustness and prevent overfitting.
+### 🧠 Feature Importance Analysis
 
-🧠 Feature Importance
-Feature importances were computed using model-specific methods:
+- Used `.feature_importances_` attribute from:
+  - **LightGBM**, **XGBoost**, **CatBoost**
+- Visualizations revealed key sensor variables driving model performance
 
-model.feature_importances_ for LightGBM, XGBoost, and CatBoost
+---
 
-Visualized to understand which sensor readings most affect performance degradation
+## 🏆 Final Results
 
-🏆 Results
-The best model achieved a final score of 89.86
+- **Final Score**: `89.86`
+- **Leaderboard Rank**: 🥇 **Top 100 out of 8000+ submissions**
+- Winning strategy: **Ensemble of LightGBM and CatBoost**
 
-Ranked in the Top 100 out of 8000 submissions
+---
 
-The ensemble of LightGBM and CatBoost models contributed most to the final solution
+## 🚀 Conclusion
 
-🚀 Conclusion
-This project demonstrated how combining powerful models like LightGBM and CatBoost with thorough preprocessing and hyperparameter tuning using Optuna can deliver high-accuracy predictive systems. With a rank in the top 1.25% of all teams, this solution serves as a strong baseline for solar panel maintenance prediction systems.
+This project highlights how **thoughtful preprocessing**, **feature engineering**, and **advanced model tuning** can produce top-tier predictive performance. The final solution is ranked in the **top 1.25% globally**, demonstrating the effectiveness of combining **gradient boosting models with optimization and validation rigor**.
+
+---
+
+🔗 *Thank you for checking out this project! For more details, refer to the notebook or contact the contributor.*
+
 
 
