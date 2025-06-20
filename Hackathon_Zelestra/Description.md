@@ -12,7 +12,7 @@ As solar energy becomes a cornerstone of sustainable infrastructure, **ensuring 
 
 ## 🧠 Machine Learning Strategy
 
-Our pipeline consists of several key stages:
+My pipeline consists of several key stages:
 
 ---
 
@@ -21,6 +21,7 @@ Our pipeline consists of several key stages:
 - Loaded `train.csv` and `test.csv` from Google Drive.
 - Inspected data using `.info()`, `.describe()`, `.head()`.
 - Identified feature types and anomalies for further cleaning.
+- Built several charts to analyze correlations and dependencies
 
 ---
 
@@ -29,14 +30,14 @@ Our pipeline consists of several key stages:
 - Dropped constant or redundant features.
 - Removed columns with boolean types.
 - Imputed missing values.
-- Standardized numerical features using `StandardScaler`.
+- Converted object columns to operate with them
 - Engineered features with domain knowledge to enhance signal.
 
 ---
 
 ### 🔧 3. Model Development & Optimization
 
-We implemented several models, each tuned using **Optuna**, a powerful hyperparameter optimization framework.
+I implemented several models, each tuned using **Optuna**, a powerful hyperparameter optimization framework.
 
 #### ✅ XGBoost
 - Parameters tuned:  
@@ -85,7 +86,7 @@ We implemented several models, each tuned using **Optuna**, a powerful hyperpara
 
 - **Final Score**: `89.86`
 - **Leaderboard Rank**: 🥇 **Top 100 out of 8000+ submissions**
-- Winning strategy: **Ensemble of LightGBM and CatBoost**
+- Winning strategy: **Hypertuned CatBoost**
 
 ---
 
